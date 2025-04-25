@@ -11,4 +11,10 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI{
 
 	@Autowired
 	AdminLoginRepository alr;
+
+	@Override
+	public void deleteById(int empId) {
+
+		alr.deleteById(empId);
+	}
 }

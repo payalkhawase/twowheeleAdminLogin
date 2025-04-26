@@ -13,6 +13,7 @@ import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI
 public class AdminLoginServiceImpl implements AdminLoginServiceI {
 
 	@Autowired
+
 	private AdminLoginRepository adminRepo;
 
 	@Autowired
@@ -34,6 +35,14 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 		} catch (Exception e) {
 			throw new RuntimeException("Failed to save admin details: " + e.getMessage(), e);
 		}
+
+	}
+
+	@Override
+	public void deleteById(int empId) {
+
+		adminRepo.deleteById(empId);
+
 	}
 }
 

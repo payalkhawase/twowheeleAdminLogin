@@ -30,6 +30,7 @@ public class EmployeeDetails {
 	private UserType userType;
 	private String username;
 	private String password;
+	
 	@Lob
 	@Column(length = 999999999)
 	private byte[] empImage;

@@ -26,5 +26,6 @@ public class AdminLoginController {
 	{
 		alsi.saveAdmin(json,empImage,empPanCard);
 		return new ResponseEntity<String>("Data added",HttpStatus.CREATED);
+		
 	}
 }

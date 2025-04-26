@@ -13,7 +13,7 @@ import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI
 public class AdminLoginServiceImpl implements AdminLoginServiceI {
 
 	@Autowired
-    AdminLoginRepository adminRepo;
+	AdminLoginRepository adminRepo;
 
 	@Autowired
 	ObjectMapper objectMapper;
@@ -21,14 +21,14 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 	@Override
 	public void saveAdmin(String json, MultipartFile empImage, MultipartFile empPanCard) {
 		try {
-			// Convert JSON to EmployeeDetails object
+			
 			EmployeeDetails employee = objectMapper.readValue(json, EmployeeDetails.class);
 
-			// Set uploaded file data
+			
 			employee.setEmpImage(empImage.getBytes());
 			employee.setEmpPanCard(empPanCard.getBytes());
 
-			// Save to DB
+			
 			adminRepo.save(employee);
 
 		} catch (Exception e) {

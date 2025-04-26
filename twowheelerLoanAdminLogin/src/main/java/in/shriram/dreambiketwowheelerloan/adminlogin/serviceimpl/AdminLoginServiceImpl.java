@@ -13,11 +13,10 @@ import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI
 public class AdminLoginServiceImpl implements AdminLoginServiceI {
 
 	@Autowired
-
-	private AdminLoginRepository adminRepo;
+    AdminLoginRepository adminRepo;
 
 	@Autowired
-	private ObjectMapper objectMapper;
+	ObjectMapper objectMapper;
 
 	@Override
 	public void saveAdmin(String json, MultipartFile empImage, MultipartFile empPanCard) {

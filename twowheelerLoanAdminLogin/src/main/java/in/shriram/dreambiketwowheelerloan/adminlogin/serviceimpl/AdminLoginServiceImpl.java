@@ -50,5 +50,10 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 		
 		return adminRepo.findById(empId).get();
 	}
+
+	@Override
+	public EmployeeDetails getEmployee(String username, String password) {
+		return adminRepo.findByUsernameAndPassword(username,password);
+	}
 }
 

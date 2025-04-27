@@ -37,12 +37,20 @@ public class AdminLoginController {
 		return new ResponseEntity<String>("Data added",HttpStatus.CREATED);
 	}
 	
-	@GetMapping("getAdmin/{empId}")
+	@GetMapping("/getAdmin/{empId}")
 	public ResponseEntity<EmployeeDetails> getAdmin(@PathVariable("empId")int empId)
 	{
 		EmployeeDetails a=alsi.getSingleAdmin(empId);
 		return new ResponseEntity<EmployeeDetails>(a,HttpStatus.OK);
 	}
+	
+	@GetMapping("/getEmployee/{username}/{password}")
+	public ResponseEntity<EmployeeDetails> getEmployee(@PathVariable("username")String username,@PathVariable("password") String password)
+	{
+		EmployeeDetails ed=alsi.getEmployee(username,password);
+		return new ResponseEntity<EmployeeDetails>(ed,HttpStatus.OK);
+	}
+	
 
 	@DeleteMapping("/deleteById/{empId}")
 	public void deleteById(@PathVariable("empId") int empId){

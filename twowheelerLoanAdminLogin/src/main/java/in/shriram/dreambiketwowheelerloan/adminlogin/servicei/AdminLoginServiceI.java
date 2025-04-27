@@ -11,7 +11,9 @@ public interface AdminLoginServiceI {
 
 	void deleteById(int empId);
 
-	public EmployeeDetails getSingleAdmin(int id);
+	public EmployeeDetails getSingleAdmin(int empId);
+
+	public EmployeeDetails getEmployee(String username, String password);
 
 
 }

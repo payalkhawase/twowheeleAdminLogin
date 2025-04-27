@@ -13,3 +13,4 @@ public class AdminLoginController {
 	@Autowired
 	AdminLoginServiceI alsi;
 }
+

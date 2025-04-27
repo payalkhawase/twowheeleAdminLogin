@@ -43,5 +43,12 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 		adminRepo.deleteById(empId);
 
 	}
+
+	@Override
+	public EmployeeDetails getSingleAdmin(int empId)
+	{
+		
+		return adminRepo.findById(empId).get();
+	}
 }
 

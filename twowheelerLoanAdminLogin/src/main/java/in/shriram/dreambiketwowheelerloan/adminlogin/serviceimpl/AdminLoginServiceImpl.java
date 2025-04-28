@@ -14,7 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import in.shriram.dreambiketwowheelerloan.adminlogin.model.EmployeeDetails;
 import in.shriram.dreambiketwowheelerloan.adminlogin.repository.AdminLoginRepository;
 import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI;
-import in.shriram.dreambiketwowheelerloan.adminlogin.exception.*;
+import in.shriram.dreambiketwowheelerloan.adminlogin.exceptions.*;
 
 @Service
 public class AdminLoginServiceImpl implements AdminLoginServiceI {

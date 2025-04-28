@@ -9,5 +9,7 @@ import in.shriram.dreambiketwowheelerloan.adminlogin.model.EmployeeDetails;
 @Repository
 public interface AdminLoginRepository extends JpaRepository<EmployeeDetails, Integer>{
 
+	EmployeeDetails findByUsernameAndPassword(String username, String password);
+
 	
 }

@@ -83,9 +83,21 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 	}
 
 	@Override
+
 	public List<EmployeeDetails> getAll() {
 		// TODO Auto-generated method stub
 		return adminRepo.findAll();
+
+	public EmployeeDetails getSingleAdmin(int empId)
+	{
+		
+		return adminRepo.findById(empId).get();
+	}
+
+	@Override
+	public EmployeeDetails getEmployee(String username, String password) {
+		return adminRepo.findByUsernameAndPassword(username,password);
+
 	}
 }
 

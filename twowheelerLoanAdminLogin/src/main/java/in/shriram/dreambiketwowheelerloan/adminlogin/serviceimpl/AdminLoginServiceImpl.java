@@ -87,6 +87,7 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 	public List<EmployeeDetails> getAll() {
 		// TODO Auto-generated method stub
 		return adminRepo.findAll();
+	}
 
 	public EmployeeDetails getSingleAdmin(int empId)
 	{

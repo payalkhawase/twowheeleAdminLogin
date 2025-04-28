@@ -61,7 +61,7 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 			if(!empImage.isEmpty())
 			{
 				if (!ALLOWED_IMAGE_TYPES.contains(empImage.getContentType())) {
-		            throw new InvalidFileTypeException("Only image files (JPEG, PNG, JPG) are allowed for photo");
+		            throw new InvalidPhotoTypeException("Only image files (JPEG, PNG, JPG) are allowed for photo");
 		        }
 				else {
 					employee.setEmpImage(empImage.getBytes());

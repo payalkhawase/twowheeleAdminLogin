@@ -5,7 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.multipart.MultipartFile;
 
-
+import in.shriram.dreambiketwowheelerloan.adminlogin.model.EmployeeDetails;
 import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI;
 
 @RestController
@@ -40,5 +41,17 @@ public class AdminLoginController {
 	public void deleteById(@PathVariable("empId") int empId){
 		alsi.deleteById(empId);
 
+	}
+	
+	@PutMapping("/UpdateEmployee/{empId}")
+	public ResponseEntity<EmployeeDetails> UpdateEmployee(@PathVariable("empId")int a,
+			@RequestPart("info")String json,
+			@RequestPart("empImage")MultipartFile empImage,
+			@RequestPart("empPanCard")MultipartFile empPanCard
+			)
+	{
+		EmployeeDetails ed= alsi.UpdateEmployee(a,json,empImage,empPanCard);
+		
+		return new ResponseEntity<EmployeeDetails>(ed,HttpStatus.OK);
 	}
 }

@@ -38,7 +38,13 @@ public class EmployeeDetails {
 	@Column(length = 999999999)
 	private byte[] empPanCard;
 	
-	
-	
-	
+//	"empFirstName":"shubham",
+//	"empMiddleName":"R",
+//	"empLastName":"chavhan",
+//	"empEmail":"empEmail",
+//	"empSalary":900000.00,
+//	"empAge":28,
+//	"userType":"ADMIN",
+//	"username":"admin"
+//	"password":"admin123"
 }

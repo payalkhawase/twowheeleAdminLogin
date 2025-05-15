@@ -33,8 +33,13 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 	@Override
 	public void saveAdmin(String json, MultipartFile empImage, MultipartFile empPanCard) {
 		try {
-			// Convert JSON to EmployeeDetails object
+		
 			EmployeeDetails employee = objectMapper.readValue(json, EmployeeDetails.class);
+
+
+			employee.setEmpImage(empImage.getBytes());
+			employee.setEmpPanCard(empPanCard.getBytes());
+
 			
 			if(employee.getEmpAge() <= 18)
 			{
@@ -68,6 +73,7 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 				}
 			}
 			// Save to DB
+
 			adminRepo.save(employee);
 
 		} catch (Exception e) {
@@ -89,6 +95,8 @@ public class AdminLoginServiceImpl implements AdminLoginServiceI {
 		return adminRepo.findAll();
 	}
 
+	}
+	
 	public EmployeeDetails getSingleAdmin(int empId)
 	{
 		

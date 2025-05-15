@@ -24,7 +24,10 @@ import in.shriram.dreambiketwowheelerloan.adminlogin.model.EmployeeDetails;
 
 import in.shriram.dreambiketwowheelerloan.adminlogin.servicei.AdminLoginServiceI;
 
+
+
 @CrossOrigin("*")
+
 @RestController
 @RequestMapping("/adminlogin")
 public class AdminLoginController {
